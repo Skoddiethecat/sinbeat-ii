@@ -12,7 +12,6 @@ void main(){
     unsigned long t;
 	
 	int iCarrier = 50;
-	int iMBytes = 16;
     uint16_t iOut = 0;
 	
     for(t=0;; t++){
