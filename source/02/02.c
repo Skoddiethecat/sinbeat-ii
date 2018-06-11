@@ -14,7 +14,7 @@ void main(){
 	int iCarrier = 50;
     uint16_t iOut = 0;
 	
-    for(t=0;; t++){
+    for(t=0;;t++){
         iOut = sinco(iCarrier, iSampleRate, 65536, phaseindex(t));
 		putchar(iOut & 0xff);
         putchar ((iOut >> 8) & 0xff);
