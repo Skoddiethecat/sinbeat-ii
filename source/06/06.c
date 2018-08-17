@@ -11,12 +11,12 @@ unsigned long phaseindex(unsigned long t){
 	i = 30000;
 	(t%8820==0)?i = i + 1:0;
 	(i = 60000)?i = 30000:0;
-	return sinco(50, iSampleRate, i, ((t>>11)|(((-t&4410)*(255&t*(t&(t>>13)))>>11)+(127&t|(234&t>>7&t>>4)>>(3&t>>17))/2))/2);}
+	return sinco(49, iSampleRate, i, (71&(t*t%4095)^(t%511)|(t&t%255)^(t&t%512)|(t^t%1023)|(t|t%2213)/16));}
 
 void main(){
     unsigned long t;
 	
-	int iCarrier = 25;
+	int iCarrier = 13;
     uint16_t iOut = 0;
 	
     for(t=0;;t++){
